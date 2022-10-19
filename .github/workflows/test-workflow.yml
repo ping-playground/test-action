@@ -7,5 +7,4 @@ jobs:
       - name: Job fail
         run: exit 1
       - name: Next job
-        if: success() || failure()
         run: echo Hello
