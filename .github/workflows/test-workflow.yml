@@ -4,8 +4,12 @@ jobs:
   test-job:
     runs-on: ubuntu-20.04
     steps:
+      - name: Job Pass
+        id: job-pass
+        run: exit 0
       - name: Job fail
+        id: job-fail
         run: exit 1
-      - name: Next job
-        if: success() || failure()
+      - name: If Job
+        if: success() || steps.job-pass.conclusion == 'failure'
         run: echo Hello
