@@ -4,9 +4,9 @@ jobs:
   test-job:
     runs-on: ubuntu-20.04
     steps:
-      - name: Job Pass
+      - name: Job Pass Fake
         id: job-pass
-        run: exit 0
+        run: exit 1
       - name: Job fail
         id: job-fail
         run: exit 1
