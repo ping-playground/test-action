@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Job fail
+        continue-on-error: true
         run: exit 1
       - name: Next job
         run: echo Hello
