@@ -1,0 +1,11 @@
+name: test-workflow
+on: push
+jobs:
+  test-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Job fail
+        uses: exit 1
+      - name: Next job
+        if: success() || failure()
+        run: echo Hello
